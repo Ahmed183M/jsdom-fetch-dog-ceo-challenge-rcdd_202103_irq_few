@@ -14,6 +14,7 @@ fetch("https://dog.ceo/api/breeds/image/random/4")
         for (const image in json.message) {
             const newImage = document.createElement("img");
             newImage.setAttribute("src", json.message[image]);
+            newImage.style.width = "500px";
             imageContainer.append(newImage);
         }
     })
