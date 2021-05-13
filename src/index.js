@@ -17,7 +17,10 @@ fetch("https://dog.ceo/api/breeds/list/all")
     dogBreeds.append(newBreed);
   }
   
-  
+  dogBreeds.addEventListener("click", (e)=>{
+    // if(e.target)
+    console.log(e.target);
+  });
 }).then(
     fetch("https://dog.ceo/api/breeds/image/random/4")
       .then(response => response.json())
