@@ -4,9 +4,6 @@ const imageContainer = document.getElementById("dog-image-container");
 const dogBreeds = document.getElementById("dog-breeds");
 const breedDropdown = document.getElementById("breed-dropdown");
 
-console.log(imageContainer);
-console.log(dogBreeds);
-console.log(breedDropdown);
 fetch("https://dog.ceo/api/breeds/list/all")
 .then(response => response.json())
 .then(json => {
@@ -22,6 +19,18 @@ fetch("https://dog.ceo/api/breeds/list/all")
     console.log(e.target);
   });
   
+  breedDropdown.addEventListener("change", ()=>{
+    dogBreeds.innerHTML = "";
+    for (const breed in json.message) {
+      if(breed[0] == breedDropdown.value){
+    const newBreed = document.createElement("li");
+    newBreed.setAttribute("class", "dogBreed");
+    newBreed.innerHTML = breed;
+    dogBreeds.append(newBreed);
+  }
+    }
+  });
+
 });
 
 fetch("https://dog.ceo/api/breeds/image/random/4")
