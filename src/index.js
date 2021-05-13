@@ -18,7 +18,7 @@ fetch("https://dog.ceo/api/breeds/list/all")
   }
   
   dogBreeds.addEventListener("click", (e)=>{
-    // if(e.target)
+    if(e.target.className == "dogBreed") e.target.style.color = "red";
     console.log(e.target);
   });
 }).then(
