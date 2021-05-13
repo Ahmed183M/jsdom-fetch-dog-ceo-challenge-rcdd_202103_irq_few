@@ -23,14 +23,13 @@ fetch("https://dog.ceo/api/breeds/list/all")
     dogBreeds.innerHTML = "";
     for (const breed in json.message) {
       if(breed[0] == breedDropdown.value){
-    const newBreed = document.createElement("li");
-    newBreed.setAttribute("class", "dogBreed");
-    newBreed.innerHTML = breed;
-    dogBreeds.append(newBreed);
-  }
+        const newBreed = document.createElement("li");
+        newBreed.setAttribute("class", "dogBreed");
+        newBreed.innerHTML = breed;
+        dogBreeds.append(newBreed);
+      }
     }
   });
-
 });
 
 fetch("https://dog.ceo/api/breeds/image/random/4")
