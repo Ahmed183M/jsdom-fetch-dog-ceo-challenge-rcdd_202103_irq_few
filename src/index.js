@@ -9,11 +9,11 @@ console.log(dogBreeds);
 console.log(breedDropdown);
 
 fetch("https://dog.ceo/api/breeds/image/random/4")
-.then(response=>response.json())
-.then(json=>{
-  for(const image in json.message){
-    const newImage = document.createElement("img");
-    newImage.setAttribute("src", image);
-    imageContainer.append(newImage);
-  }
-})
+    .then(response => response.json())
+    .then(json => {
+        for (const image in json.message) {
+            const newImage = document.createElement("img");
+            newImage.setAttribute("src", json.message[image]);
+            imageContainer.append(newImage);
+        }
+    })
