@@ -1,1 +1,19 @@
-console.log('%c HI', 'color: firebrick')
+console.log('%c HI', 'color: firebrick');
+
+const imageContainer = document.getElementById("dog-image-container");
+const dogBreeds = document.getElementById("dog-breeds");
+const breedDropdown = document.getElementById("breed-dropdown");
+
+console.log(imageContainer);
+console.log(dogBreeds);
+console.log(breedDropdown);
+
+fetch("https://dog.ceo/api/breeds/image/random/4")
+.then(response=>response.json())
+.then(json=>{
+  for(const image in json.message){
+    const newImage = document.createElement("img");
+    newImage.setAttribute("src", image);
+    imageContainer.append(newImage);
+  }
+})
