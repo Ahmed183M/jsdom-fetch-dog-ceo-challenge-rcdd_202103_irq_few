@@ -12,8 +12,8 @@ fetch("https://dog.ceo/api/breeds/list/all")
 .then(json => {
   for (const breed in json.message) {
     const newBreed = document.createElement("li");
-    newBreed.innerHTML = json.message[newBreed];
-    dogBreeds.append(newImage);
+    newBreed.innerHTML = newBreed;
+    dogBreeds.append(newBreed);
   }
 }).then(
     fetch("https://dog.ceo/api/breeds/image/random/4")
