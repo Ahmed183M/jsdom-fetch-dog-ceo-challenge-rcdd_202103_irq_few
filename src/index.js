@@ -7,7 +7,7 @@ const breedDropdown = document.getElementById("breed-dropdown");
 console.log(imageContainer);
 console.log(dogBreeds);
 console.log(breedDropdown);
-fetch("https://dog.ceo/api/breeds/image/random/4")
+fetch("https://dog.ceo/api/breeds/list/all")
 .then(response => response.json())
 .then(json => {
   for (const image in json.message) {
