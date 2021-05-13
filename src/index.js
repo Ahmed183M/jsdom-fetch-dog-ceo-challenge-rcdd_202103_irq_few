@@ -16,15 +16,15 @@ fetch("https://dog.ceo/api/breeds/image/random/4")
             newImage.style.width = "20%";
             imageContainer.append(newImage);
         }
+    }).then(
+        fetch("https://dog.ceo/api/breeds/image/random/4")
+          .then(response => response.json())
+          .then(json => {
+             for (const image in json.message) {
+                 const newImage = document.createElement("img");
+                 newImage.setAttribute("src", json.message[image]);
+                 newImage.style.width = "20%";
+                  imageContainer.append(newImage);
+             }
     })
-    .then(
-fetch("https://dog.ceo/api/breeds/image/random/4")
-    .then(response => response.json())
-    .then(json => {
-        for (const image in json.message) {
-            const newImage = document.createElement("img");
-            newImage.setAttribute("src", json.message[image]);
-            newImage.style.width = "20%";
-            imageContainer.append(newImage);
-        }
-    }));
+    );
