@@ -10,11 +10,10 @@ console.log(breedDropdown);
 fetch("https://dog.ceo/api/breeds/list/all")
 .then(response => response.json())
 .then(json => {
-  for (const image in json.message) {
-    const newImage = document.createElement("img");
-    newImage.setAttribute("src", json.message[image]);
-    newImage.style.width = "20%";
-    imageContainer.append(newImage);
+  for (const breed in json.message) {
+    const newBreed = document.createElement("li");
+    newBreed.innerHTML = json.message[newBreed];
+    dogBreeds.append(newImage);
   }
 }).then(
     fetch("https://dog.ceo/api/breeds/image/random/4")
