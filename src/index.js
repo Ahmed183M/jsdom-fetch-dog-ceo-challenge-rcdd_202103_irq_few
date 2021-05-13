@@ -12,7 +12,7 @@ fetch("https://dog.ceo/api/breeds/list/all")
 .then(json => {
   for (const breed in json.message) {
     const newBreed = document.createElement("li");
-    newBreed.innerHTML = json.message[breed];
+    newBreed.innerHTML = breed;
     dogBreeds.append(newBreed);
   }
 }).then(
